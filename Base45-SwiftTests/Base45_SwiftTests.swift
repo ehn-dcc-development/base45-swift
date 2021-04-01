@@ -20,12 +20,21 @@ class Base45_SwiftTests: XCTestCase {
 
     func testExample() throws {
         // examples from https://datatracker.ietf.org/doc/draft-faltstrom-base45/
-        XCTAssertEqual( "%69 VD92EX0".fromBase45(), "Hello!!".data(using: .utf8));
-        XCTAssertEqual( "UJCLQE7W581".fromBase45(), "base-45".data(using: .utf8));
-        XCTAssertEqual( "QED8WEX0".fromBase45(), "ietf!".data(using: .utf8));
+        XCTAssertEqual( try "%69 VD92EX0".fromBase45(), "Hello!!".data(using: .utf8));
+        XCTAssertEqual( try "UJCLQE7W581".fromBase45(), "base-45".data(using: .utf8));
+        XCTAssertEqual( try "QED8WEX0".fromBase45(), "ietf!".data(using: .utf8));
+
+        // Ignore upper/lowercase - they are equal
+        XCTAssertEqual( try "UjClqe7w581".fromBase45(), "base-45".data(using: .utf8));
 
         XCTAssertEqual( "%69 VD92EX0", "Hello!!".data(using: .utf8)?.toBase45());
         XCTAssertEqual( "UJCLQE7W581", "base-45".data(using: .utf8)?.toBase45());
         XCTAssertEqual( "QED8WEX0", "ietf!".data(using: .utf8)?.toBase45());
+        XCTAssertEqual( "", "".data(using: .utf8)?.toBase45());
+        
+        // Try some illegal chars and an illegal length.
+        //
+        XCTAssertThrowsError(try "!^&".fromBase45())
+        XCTAssertThrowsError(try "AAAA".fromBase45())
     }
 }
