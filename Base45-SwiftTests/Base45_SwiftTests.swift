@@ -19,15 +19,13 @@ class Base45_SwiftTests: XCTestCase {
     }
 
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+        // examples from https://datatracker.ietf.org/doc/draft-faltstrom-base45/
+        XCTAssertEqual( "%69 VD92EX0".fromBase45(), "Hello!!".data(using: .utf8));
+        XCTAssertEqual( "UJCLQE7W581".fromBase45(), "base-45".data(using: .utf8));
+        XCTAssertEqual( "QED8WEX0".fromBase45(), "ietf!".data(using: .utf8));
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+        XCTAssertEqual( "%69 VD92EX0", "Hello!!".data(using: .utf8)?.toBase45());
+        XCTAssertEqual( "UJCLQE7W581", "base-45".data(using: .utf8)?.toBase45());
+        XCTAssertEqual( "QED8WEX0", "ietf!".data(using: .utf8)?.toBase45());
     }
-
 }

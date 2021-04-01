@@ -10,6 +10,9 @@
 		32C5D1BB26161F14001F925D /* Base45_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C5D1B126161F14001F925D /* Base45_Swift.framework */; };
 		32C5D1C026161F14001F925D /* Base45_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C5D1BF26161F14001F925D /* Base45_SwiftTests.swift */; };
 		32C5D1C226161F14001F925D /* Base45_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 32C5D1B426161F14001F925D /* Base45_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		32C5D1CE26161F3E001F925D /* Base45.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C5D1CD26161F3E001F925D /* Base45.swift */; };
+		32C5D1D2261626BB001F925D /* LICENSE-ASF-2.0.txt in Resources */ = {isa = PBXBuildFile; fileRef = 32C5D1D1261626BB001F925D /* LICENSE-ASF-2.0.txt */; };
+		32C5D1D6261626C2001F925D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 32C5D1D5261626C2001F925D /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,9 @@
 		32C5D1BA26161F14001F925D /* Base45-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Base45-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32C5D1BF26161F14001F925D /* Base45_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base45_SwiftTests.swift; sourceTree = "<group>"; };
 		32C5D1C126161F14001F925D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32C5D1CD26161F3E001F925D /* Base45.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base45.swift; sourceTree = "<group>"; };
+		32C5D1D1261626BB001F925D /* LICENSE-ASF-2.0.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "LICENSE-ASF-2.0.txt"; sourceTree = "<group>"; };
+		32C5D1D5261626C2001F925D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,8 @@
 		32C5D1A726161F14001F925D = {
 			isa = PBXGroup;
 			children = (
+				32C5D1D1261626BB001F925D /* LICENSE-ASF-2.0.txt */,
+				32C5D1D5261626C2001F925D /* README.md */,
 				32C5D1B326161F14001F925D /* Base45-Swift */,
 				32C5D1BE26161F14001F925D /* Base45-SwiftTests */,
 				32C5D1B226161F14001F925D /* Products */,
@@ -73,6 +81,7 @@
 			children = (
 				32C5D1B426161F14001F925D /* Base45_Swift.h */,
 				32C5D1B526161F14001F925D /* Info.plist */,
+				32C5D1CD26161F3E001F925D /* Base45.swift */,
 			);
 			path = "Base45-Swift";
 			sourceTree = "<group>";
@@ -147,6 +156,7 @@
 				TargetAttributes = {
 					32C5D1B026161F14001F925D = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 					32C5D1B926161F14001F925D = {
 						CreatedOnToolsVersion = 12.4;
@@ -177,6 +187,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32C5D1D6261626C2001F925D /* README.md in Resources */,
+				32C5D1D2261626BB001F925D /* LICENSE-ASF-2.0.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32C5D1CE26161F3E001F925D /* Base45.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +354,7 @@
 		32C5D1C626161F14001F925D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = HN29PWT4WM;
@@ -357,6 +371,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.webweaving.Base45-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,6 +380,7 @@
 		32C5D1C726161F14001F925D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = HN29PWT4WM;
@@ -389,6 +405,7 @@
 		32C5D1C926161F14001F925D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HN29PWT4WM;
 				INFOPLIST_FILE = "Base45-SwiftTests/Info.plist";
@@ -407,6 +424,7 @@
 		32C5D1CA26161F14001F925D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HN29PWT4WM;
 				INFOPLIST_FILE = "Base45-SwiftTests/Info.plist";
