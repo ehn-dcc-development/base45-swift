@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "BigInt",
+        "repositoryURL": "git@github.com:attaswift/BigInt.git",
+        "state": {
+          "branch": "master",
+          "revision": "114862bdaca21974d9587ec41421fb23b302c309",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

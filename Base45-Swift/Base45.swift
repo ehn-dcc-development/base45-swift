@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import BigInt
 
 extension String {
     enum Base45Error: Error {
@@ -17,7 +18,6 @@ extension String {
         let BASE45_CHARSET = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:"
         var d = Data()
         var o = Data()
-        
         for c in self.uppercased() {
             if let at = BASE45_CHARSET.firstIndex(of: c) {
                 let idx  = BASE45_CHARSET.distance(from: BASE45_CHARSET.startIndex, to: at)
@@ -26,6 +26,7 @@ extension String {
                 throw Base45Error.Base64InvalidCharacter
             }
         }
+#if SWEDEN
         for i in stride(from:0, to:d.count, by: 3) {
             if (d.count - i < 2) {
                 throw Base45Error.Base64InvalidLength
@@ -37,6 +38,17 @@ extension String {
             }
             o.append(UInt8(x % 256))
         }
+#else
+        var f = BigUInt(1)
+        var r = BigUInt(0)
+        for c in d.reversed() {
+            r += (f * BigUInt(c))
+            f *= 45
+        }
+        for c in r.serialize() {
+            o.append(c)
+}
+#endif
         return o
     }
 }
@@ -51,6 +63,7 @@ extension Data {
     public func toBase45()->String {
         let BASE45_CHARSET = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:"
         var o = String()
+#if SWEDEN
         for i in stride(from:0, to:self.count, by: 2) {
             if (self.count - i > 1) {
                 let x : Int = (Int(self[i])<<8) + Int(self[i+1])
@@ -69,7 +82,15 @@ extension Data {
                 o.append(BASE45_CHARSET[d])
             }
         }
-        return o
+#else
+    var d = BigUInt(self)
+    while(d > 0) {
+        let (q, r) = d.quotientAndRemainder(dividingBy: 45)
+        d = q
+        o.insert(contentsOf: BASE45_CHARSET[Int(r)], at: o.startIndex)
+    }
+#endif
+        return o;
     }
 }
         

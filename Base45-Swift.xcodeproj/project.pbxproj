@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		320EE3F82617B9FA00FD15B5 /* BigInt in Frameworks */ = {isa = PBXBuildFile; productRef = 320EE3F72617B9FA00FD15B5 /* BigInt */; };
 		32C5D1BB26161F14001F925D /* Base45_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C5D1B126161F14001F925D /* Base45_Swift.framework */; };
 		32C5D1C026161F14001F925D /* Base45_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C5D1BF26161F14001F925D /* Base45_SwiftTests.swift */; };
 		32C5D1C226161F14001F925D /* Base45_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 32C5D1B426161F14001F925D /* Base45_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -42,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				320EE3F82617B9FA00FD15B5 /* BigInt in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +125,9 @@
 			dependencies = (
 			);
 			name = "Base45-Swift";
+			packageProductDependencies = (
+				320EE3F72617B9FA00FD15B5 /* BigInt */,
+			);
 			productName = "Base45-Swift";
 			productReference = 32C5D1B126161F14001F925D /* Base45_Swift.framework */;
 			productType = "com.apple.product-type.framework";
@@ -172,6 +177,9 @@
 				Base,
 			);
 			mainGroup = 32C5D1A726161F14001F925D;
+			packageReferences = (
+				320EE3F62617B9FA00FD15B5 /* XCRemoteSwiftPackageReference "BigInt" */,
+			);
 			productRefGroup = 32C5D1B226161F14001F925D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -471,6 +479,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		320EE3F62617B9FA00FD15B5 /* XCRemoteSwiftPackageReference "BigInt" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:attaswift/BigInt.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		320EE3F72617B9FA00FD15B5 /* BigInt */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 320EE3F62617B9FA00FD15B5 /* XCRemoteSwiftPackageReference "BigInt" */;
+			productName = BigInt;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 32C5D1A826161F14001F925D /* Project object */;
 }

@@ -19,6 +19,7 @@ class Base45_SwiftTests: XCTestCase {
     }
 
     func testExample() throws {
+#if SWEDEN
         // examples from https://datatracker.ietf.org/doc/draft-faltstrom-base45/
         XCTAssertEqual( try "%69 VD92EX0".fromBase45(), "Hello!!".data(using: .utf8));
         XCTAssertEqual( try "UJCLQE7W581".fromBase45(), "base-45".data(using: .utf8));
@@ -36,5 +37,15 @@ class Base45_SwiftTests: XCTestCase {
         //
         XCTAssertThrowsError(try "!^&".fromBase45())
         XCTAssertThrowsError(try "AAAA".fromBase45())
+#else
+        XCTAssertEqual( "hello world".data(using: .utf8), try "K3*J+EGLBVAYYB36".fromBase45());
+        XCTAssertEqual( "foo bar" .data(using: .utf8), try "%4VVO:F$X5".fromBase45());
+        XCTAssertEqual( "ietf!".data(using: .utf8), try "19N6HOO$".fromBase45());
+        XCTAssertEqual( "Hello!!".data(using: .utf8), try "Q-*2/.MZ B".fromBase45());
+        XCTAssertEqual( "COVID-19".data(using: .utf8), try "37J$4 QAWL0E".fromBase45());
+        XCTAssertEqual( "2021 Digital Green Certificates for travel".data(using: .utf8),
+                        try "HREOZC%EXPZQX3G6VGTB%7+Q2BISAC87Y5A QC8774F7A2NY6G+MIJ$YUSQ3P".fromBase45());
+#endif
+        
     }
 }
