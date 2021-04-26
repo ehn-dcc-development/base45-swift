@@ -36,7 +36,7 @@ For this reason - the industry generally encodes these in base45. A document for
 ```https://datatracker.ietf.org/doc/draft-faltstrom-base45/```
                    DESC
 
-  spec.homepage     = "https://github.com/HannesVDB/base45-swiftt"
+  spec.homepage     = "https://github.com/HannesVDB/base45-swift"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
