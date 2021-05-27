@@ -23,6 +23,7 @@ extension String {
     enum Base45Error: Error {
         case Base64InvalidCharacter
         case Base64InvalidLength
+        case DataOverflow
     }
     
     public func fromBase45() throws ->Data  {
@@ -45,6 +46,11 @@ extension String {
             var x : UInt32 = UInt32(d[i]) + UInt32(d[i+1])*45
             if (d.count - i >= 3) {
                 x += 45 * 45 * UInt32(d[i+2])
+                
+                guard x / 256 <= UInt8.max else {
+                    throw Base45Error.DataOverflow
+                }
+                
                 o.append(UInt8(x / 256))
             }
             o.append(UInt8(x % 256))

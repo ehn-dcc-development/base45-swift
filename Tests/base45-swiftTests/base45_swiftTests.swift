@@ -36,5 +36,8 @@ import XCTest
             //
             XCTAssertThrowsError(try "!^&".fromBase45())
             XCTAssertThrowsError(try "AAAA".fromBase45())
+            
+            // Cause an overflow
+            XCTAssertThrowsError(try "ZZZZ".fromBase45())
         }
     }
