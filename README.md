@@ -18,7 +18,11 @@ Details of this 11 bits per two characters can be found at
 
 For this reason - the industry generally encodes these in base45. A document for this defacto standard is in flight:
 
-    https://datatracker.ietf.org/doc/draft-faltstrom-base45/    
+    ```https://datatracker.ietf.org/doc/draft-faltstrom-base45/```
+
+version history
+v1.00		first version
+v1.01	27/5	Fix #5 / add guard for overflow is added. Credits @ArturFriesen
 
 ## Licensing
 
