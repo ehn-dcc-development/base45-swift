@@ -19,7 +19,10 @@ For this reason - the industry generally encodes these in base45. A document for
   spec.homepage     = "https://github.com/ehn-digital-green-development/base45-swift"
   spec.license      = "Apache License"
   spec.authors      = { "Hannes Van den Berghe" => "hannes.vandenberghe@icapps.com", "Dirk-Willem van Gulik" => "dirkx@webweaving.org" }
-  spec.ios.deployment_target = "12.0"
+  spec.ios.deployment_target = '10.0'
+  spec.osx.deployment_target = '10.11'
+  spec.tvos.deployment_target = '10.0'
+  spec.watchos.deployment_target = '3.0'
   spec.swift_version = '4.0'
   spec.source       = { :git => "https://github.com/ehn-digital-green-development/base45-swift.git", :tag => "#{spec.version}" }
   spec.source_files  = "Base45-Swift/*.{swift}"
